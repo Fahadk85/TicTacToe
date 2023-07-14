@@ -17,3 +17,28 @@ let options = ["", "", "", "", "", "", "", "", ""];
 
 let cuurrentPlayer = "X";
 let running = false;
+
+
+function intializeGame(){
+    
+}
+
+function cellClicked(){
+
+}
+
+function updateCell(cell, index){
+
+}
+
+function changePlayer(){
+
+}
+
+function checkWinner(){
+
+}
+
+function restartGame(){
+
+}
