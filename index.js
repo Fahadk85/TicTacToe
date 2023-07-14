@@ -13,22 +13,25 @@ const winConditions = [
     [2, 4, 6]
 ];
 
-let options = ["", "", "", "", "", "", "", "", ""];
+let options = [" ", " ", " ", " ", " ", " ", " ", " ", " "];
 
-let cuurrentPlayer = "X";
+let currentPlayer = "X";
 let running = false;
+
+
+intializeGame();
 
 
 function intializeGame(){
     cells.forEach(cell => cell.addEventListener("click", cellClicked));
     restartBtn.addEventListener("click", restartGame);
-    statusText.textContent = `${cuurrentPlayer}'s Turn`;
+    statusText.textContent = `${currentPlayer}'s Turn`;
     running = true;
 }
 
 function cellClicked(){
     const cellIndex = this.getAttribute("cellIndex");
-    if(options[cellIndex] != "" || !running){
+    if(options[cellIndex] != " " || !running){
         return;
     }
 
@@ -37,13 +40,13 @@ function cellClicked(){
 }
 
 function updateCell(cell, index){
-    options[index] = cuurrentPlayer;
-    cell.textContent = cuurrentPlayer;
-
+    options[index] = currentPlayer;
+    cell.textContent = currentPlayer;
 }
 
 function changePlayer(){
-
+    currentPlayer = (currentPlayer == "X") ? "O" : "X";
+    statusText.textContent = `${currentPlayer}'s Turn`;
 }
 
 function checkWinner(){
